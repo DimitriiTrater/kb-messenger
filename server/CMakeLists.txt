@@ -4,6 +4,14 @@ project(kb-messenger-server LANGUAGES CXX)
 set(CMAKE_CXX_STANDART 20)
 set(CMAKE_CXX_STANDART_REQUIRED ON)
 
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+
+if(WIN32)
+    set(CMAKE_PREFIX_PATH $ENV{QTDIR})
+endif()
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED 
     COMPONENTS
         Core
